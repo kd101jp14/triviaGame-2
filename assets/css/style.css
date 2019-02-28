@@ -1,0 +1,71 @@
+body {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    display: block;
+    margin: 30px auto 30px auto;
+    font-size: 25px;
+}
+
+h1 {
+    display: none;
+}
+
+.titleImage {
+    max-width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lionFish {
+    max-width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.instructions,
+.question,
+#timeUpScreen {
+    color: white;
+    text-shadow: 2px 2px black;
+    background: rgba(0, 00, 51, .4);
+    margin: 10px;
+    padding: 10px;
+}
+#secondsLeft {
+    color: white;
+    text-shadow: 2px 2px black;
+    background: rgba(221, 0, 29, 0.4);
+    margin: 10px;
+    padding: 10px;
+}
+
+h2,
+p {
+    font-size: 30px;
+    text-align: center;
+}
+
+.btn-primary {
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: 30px;
+    background: rgba(22, 6, 82, 0.4);
+    border: 2px solid #b5f2d4;
+    margin-top: 50px;
+
+}
+
+form {
+    width: 100%;
+}
+
+.buttonColumn {
+    margin: auto;
+}
+
+#timeUpScreen {
+    text-align: center;
+}
