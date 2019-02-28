@@ -48,6 +48,10 @@ p {
     text-align: center;
 }
 
+.octopus {
+    width: 80%;
+}
+
 .btn-primary {
     color: white;
     text-shadow: 2px 2px black;
