@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ocean Trivia Game</title>
+    <!-- jQuery CDN Link-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <!-- Link to External JavaScript File -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <!-- Bootstrap CDN Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <audio id="splash" src="assets/sounds/splash.mp3"></audio>
+    <audio id="bubbles" src="assets/sounds/bubbles.mp3"></audio>
+
+    <div class="container">
+
+        <div id="startScreen">
+            <div class="row title">
+                <div class="col-sm">
+                    <img class="titleImage" src="assets/images/triviaTitle.png" alt="Ocean Trivia">
+                    <button type="start" id="startButton" class="btn mb-2 playbtn">
+                        <img class="lionFish" src="assets/images/lionFish.png" alt="Lion Fish">
+                    </button>
+                    <h1>Ocean Trivia</h1>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <div class="row">
+                    <div class="col-sm">
+                        <p> How deep is your ocean knowledge? You have one minute to find out.</p>
+                        <p>Click the lion fish to start!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameScreen">
+            <div id="timeDisplay" class="row">
+                <div class="col-sm">
+                    <p id="secondsLeft">Seconds remaining: 60</p>
+                </div>
+            </div>
+
+            <div class="row question">
+                <div class="col-sm">
+                    <h2>Which is the largest animal in the ocean?</h2>
+                    <form id="form1">
+                        <input type="radio" class="userChoice" name="q1" value="a"> blue whale<br>
+                        <input type="radio" class="userChoice" name="q1" value="b"> colossal squid<br>
+                        <input type="radio" class="userChoice" name="q1" value="c"> great white shark
+                </div>
+            </div>
+
+            <div class="row question">
+                <div class="col-sm">
+                    <h2>Which is <b>NOT</b> an ocean?</h2>
+                    <form id="form2">
+                        <input type="radio" class="userChoice" name="q2" value="a"> Indian Ocean<br>
+                        <input type="radio" class="userChoice" name="q2" value="b"> Arctic Ocean<br>
+                        <input type="radio" class="userChoice" name="q2" value="c"> Specific Ocean
+                    </form>
+                </div>
+            </div>
+
+            <div class="row question">
+                <div class="col-sm">
+                    <h2>Approximately how much of the Earth's surface is covered by ocean?</h2>
+                    <form id="form3">
+                        <input type="radio" class="userChoice" name="q3" value="a"> 50 percent<br>
+                        <input type="radio" class="userChoice" name="q3" value="b"> 70 percent<br>
+                        <input type="radio" class="userChoice" name="q3" value="c"> 80 percent
+                    </form>
+                </div>
+            </div>
+
+            <div class="row question">
+                <div class="col-sm">
+                    <h2>Many sea creatures in the bottom of the sea have the ability to ...</h2>
+                    <form id="form4">
+                        <input type="radio" class="userChoice" name="q4" value="a"> see far distances<br>
+                        <input type="radio" class="userChoice" name="q4" value="b"> go months without food<br>
+                        <input type="radio" class="userChoice" name="q4" value="c"> glow
+                    </form>
+                </div>
+            </div>
+
+            <div class="row question">
+                <div class="col-sm">
+                    <h2>Which is <b>NOT</b> true about corals?</h2>
+                    <form id="form5">
+                        <input type="radio" class="userChoice" name="q5" value="a"> They are plants.<br>
+                        <input type="radio" class="userChoice" name="q5" value="b"> They are animals.<br>
+                        <input type="radio" class="userChoice" name="q5" value="c"> They grow slowly.
+                    </form>
+                </div>
+            </div>
+
+            <div class="row question">
+                <div class="col-sm">
+                    <h2>What is significant about the Mariana Trench?</h2>
+                    <form id="form6">
+                        <input type="radio" class="userChoice" name="q6" value="a"> It is the most popular spot for recreational divers.<br>
+                        <input type="radio" class="userChoice" name="q6" value="b"> It is considered the deepest part of the ocean.<br>
+                        <input type="radio" class="userChoice" name="q6" value="c"> It is a site for frequent mermaid sightings.
+                    </form>
+                </div>
+            </div>
+            <div class="row buttonRow">
+                <div class="column buttonColumn">
+                    <button type="submit" id="submitButton" class="btn btn-primary mb-2"><i class="fas fa-fish"></i> Submit Those Answers!</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="timeUpScreen">
+            <div class="row">
+                <div class="col-sm">
+                    <div id="correct">Correct: </div>
+                    <div id="incorrect">Incorrect: </div>
+                    <div id="unanswered">Unanswered: </div>
+                </div>
+            </div>
+            <div class="row buttonRow">
+                <div class="column buttonColumn">
+                    <button type="start" id="restartButton" class="btn btn-primary mb-2 playbtn"><i class="fas fa-fish"></i> Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
